@@ -16,8 +16,8 @@ class Var(object):
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
     BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1002068662847'))
-    PORT = int(getenv('PORT', '443'))
-    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '172.16.0.2'))
+    PORT = int(getenv('PORT', '22'))
+    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '67.219.139.52'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "1332840810").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
@@ -29,7 +29,7 @@ class Var(object):
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', '172.16.0.2:443')) if not ON_HEROKU or getenv('FQDN', '172.16.0.2:443') else APP_NAME+'.herokuapp.com'
+    FQDN = str(getenv('FQDN', '67.219.139.52:22')) if not ON_HEROKU or getenv('FQDN', '67.219.139.52:22') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
